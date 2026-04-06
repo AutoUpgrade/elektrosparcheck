@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head> <meta name="p:domain_verify" content="dbc1d67448af8671e49914e13cb067a7"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Auto Ersparnis-Check 2026 | Jetzt Kosten berechnen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --success: #22c55e;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .header-icon {
+            width: 64px;
+            height: 64px;
+            background: #dbeafe;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-size: 32px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-card {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group:last-child { margin-bottom: 0; }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            box-sizing: border-box;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .result-card {
+            background: #0f172a;
+            color: white;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .savings-label {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .savings-amount {
+            display: block;
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--success);
+            margin: 10px 0;
+        }
+
+        .bar-bg {
+            background: #334155;
+            height: 8px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        #savings-bar {
+            background: var(--success);
+            height: 100%;
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+        }
+
+        .split-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .split-box {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .legal-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 25px; }
+            .savings-amount { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-icon">⚡</div>
+    <h1>Spar-Check 2026</h1>
+    <p class="subtitle">Vergleiche deine Fahrtkosten in Sekunden</p>
+
+    <div class="input-card">
+        <div class="input-group">
+            <label>Kilometer pro Jahr</label>
+            <input type="number" id="km" value="15000" oninput="update()">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="input-group">
+                <label>Spritpreis (€/L)</label>
+                <input type="number" id="spritP" value="1.82" step="0.01" oninput="update()">
+            </div>
+            <div class="input-group">
+                <label>Strom (€/kWh)</label>
+                <input type="number" id="stromP" value="0.32" step="0.01" oninput="update()">
+            </div>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <span class="savings-label">Deine jährliche Ersparnis</span>
+        <span id="savings" class="savings-amount">0,00 €</span>
+        <div class="bar-bg"><div id="savings-bar"></div></div>
+        
+        <div class="split-results">
+            <div class="split-box">Benzin: <br><span id="costB">0 €</span></div>
+            <div class="split-box">Strom: <br><span id="costE" style="color:var(--success)">0 €</span></div>
+        </div>
+    </div>
+
+    <a href="#" class="cta-button" id="mainLink" onclick="checkLink(event)">Günstigen Stromtarif finden →</a>
+
+    <footer id="impressum">
+        <strong>Impressum:</strong> Leonit Behrami, Obermarkstraße, 56330 Kobern-Gondorf | <strong>E-Mail:</strong> leonit.behrami21@gmail.com <br>
+    <p>* Affiliate-Hinweis: Bei einem Wechsel über den Button erhalten wir eine kleine Provision. Dein Preis bleibt gleich.</p>
+    
+    <a href="javascript:void(0)" class="legal-link" onclick="togglePrivacy()">Datenschutzerklärung anzeigen</a>
+    
+    <div id="privacy-text" style="display:none; margin-top: 20px; text-align: left; padding: 15px; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 10px;">
+        <strong>Datenschutzerklärung</strong><br><br>
+        Diese Webseite dient reinen Informationszwecken. Wir erheben, speichern oder verarbeiten keine personenbezogenen Daten der Besucher. Die Berechnungen im Tool erfolgen lokal in Ihrem Browser.<br><br>
+        <strong>Cookies & Partner-Links:</strong><br>
+        Bei Klick auf den Vergleichs-Button werden Sie zu unserem Partner Check24 weitergeleitet. Dabei können Cookies gesetzt werden, um die Herkunft des Nutzers zu identifizieren (Affiliate-Tracking). Weitere Informationen finden Sie in der Datenschutzerklärung von Check24.<br><br>
+        <strong>Ihre Rechte:</strong><br>
+        Da wir keine Daten speichern, haben wir keine Informationen über Sie. Bei Fragen wenden Sie sich an die oben genannte E-Mail-Adresse.
+    </div>
+    </footer>
+</div>
+
+<script>
+function update() {
+    const km = parseFloat(document.getElementById('km').value) || 0;
+    const sP = parseFloat(document.getElementById('spritP').value) || 0;
+    const eP = parseFloat(document.getElementById('stromP').value) || 0;
+
+    // Durchschnittswerte: 7.5L Benzin vs 19kWh Strom
+    const costBurner = (km / 100) * 7.5 * sP;
+    const costElectric = (km / 100) * 19 * eP;
+    const savings = Math.max(0, costBurner - costElectric);
+    
+    document.getElementById('savings').innerText = savings.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    document.getElementById('costB').innerText = costBurner.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+    document.getElementById('costE').innerText = costElectric.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+
+    // Bar Animation (100% bei 2000€ Ersparnis)
+    const percent = Math.min((savings / 2000) * 100, 100);
+    document.getElementById('savings-bar').style.width = percent + '%';
+}
+
+function checkLink(e) {
+    if(document.getElementById('mainLink').getAttribute('href') === "#") {
+        e.preventDefault();
+        alert("Wartungsarbeiten: Unser Vergleichsportal wird gerade für 2026 aktualisiert. Bitte versuche es in Kürze erneut!");
+    }
+}
+function togglePrivacy() {
+    const p = document.getElementById('privacy-text');
+    p.style.display = (p.style.display === 'none') ? 'block' : 'none';
+    if(p.style.display === 'block') p.scrollIntoView({behavior: 'smooth'});
+}
+
+// Initialer Aufruf
+update();
+</script>
+
+</body>
+</html>
