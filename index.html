@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
-<head> <meta name="p:domain_verify" content="dbc1d67448af8671e49914e13cb067a7"/>
+<head> 
+    <meta name="p:domain_verify" content="dbc1d67448af8671e49914e13cb067a7"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Auto Ersparnis-Check 2026 | Jetzt Kosten berechnen</title>
@@ -238,7 +239,7 @@
         </div>
     </div>
 
-    <a href="#" class="cta-button" id="mainLink" onclick="checkLink(event)">Günstigen Stromtarif finden →</a>
+    <a href="HIER_DEINEN_CHECK24_LINK_EINFÜGEN" target="_blank" class="cta-button" id="mainLink">Günstigen Stromtarif finden →</a>
 
     <footer id="impressum">
         <strong>Impressum:</strong> Leonit Behrami, Obermarkstraße 119, 56330 Kobern-Gondorf | <strong>E-Mail:</strong> leonit.behrami21@gmail.com <br>
@@ -277,12 +278,6 @@ function update() {
     document.getElementById('savings-bar').style.width = percent + '%';
 }
 
-function checkLink(e) {
-    if(document.getElementById('mainLink').getAttribute('href') === "#") {
-        e.preventDefault();
-        alert("Wartungsarbeiten: Unser Vergleichsportal wird gerade für 2026 aktualisiert. Bitte versuche es in Kürze erneut!");
-    }
-}
 function togglePrivacy() {
     const p = document.getElementById('privacy-text');
     p.style.display = (p.style.display === 'none') ? 'block' : 'none';
