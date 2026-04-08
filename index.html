@@ -37,6 +37,9 @@
             border-radius: 32px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zentriert Inhalte wie den Banner */
         }
 
         .header-icon {
@@ -58,6 +61,7 @@
             text-align: center;
             margin: 0 0 10px 0;
             letter-spacing: -0.02em;
+            width: 100%;
         }
 
         .subtitle {
@@ -65,6 +69,7 @@
             color: var(--text-muted);
             font-size: 15px;
             margin-bottom: 30px;
+            width: 100%;
         }
 
         .input-card {
@@ -73,6 +78,8 @@
             border-radius: 20px;
             border: 1px solid #e2e8f0;
             margin-bottom: 25px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .input-group {
@@ -117,6 +124,8 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .savings-label {
@@ -176,6 +185,8 @@
             margin-top: 25px;
             transition: all 0.3s;
             box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .cta-button:hover {
@@ -184,12 +195,19 @@
             box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
         }
 
+        .banner-container {
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+        }
+
         footer {
             margin-top: 40px;
             text-align: center;
             font-size: 11px;
             color: var(--text-muted);
             line-height: 1.5;
+            width: 100%;
         }
 
         .legal-link {
@@ -239,19 +257,26 @@
         </div>
     </div>
 
-    <a href="HIER_DEINEN_CHECK24_LINK_EINFÜGEN" target="_blank" class="cta-button" id="mainLink">Günstigen Stromtarif finden →</a>
+    <a href="https://www.c24n.de/XueMFjw" target="_blank" class="cta-button" id="mainLink">Günstigen Stromtarif finden →</a>
+
+    <div class="banner-container">
+        <a href="https://a.check24.net/misc/click.php?pid=1169621&aid=302&deep=stromanbieter-wechseln&cat=1" target="_blank">
+            <img src="https://a.check24.net/misc/view.php?pid=1169621&aid=302&cat=1" width="160" height="600" style="max-width: 100%; height: auto;" alt="Check24 Stromanbieter Vergleich">
+        </a>
+    </div>
 
     <footer id="impressum">
-        <strong>Impressum:</strong> Leonit Behrami, Obermarkstraße 119, 56330 Kobern-Gondorf | <strong>E-Mail:</strong> leonit.behrami21@gmail.com <br>
-    <p>* Affiliate-Hinweis: Bei einem Wechsel über den Button erhalten wir eine kleine Provision. Dein Preis bleibt gleich.</p>
+        <strong>Impressum:</strong> Leonit Behrami, Obermarkstraße 119, 56330 Kobern-Gondorf | <strong>E-Mail:</strong> leonit.behrami21@gmail.com <br><br>
     
-    <a href="javascript:void(0)" class="legal-link" onclick="togglePrivacy()">Datenschutzerklärung anzeigen</a>
+    <a href="javascript:void(0)" class="legal-link" onclick="togglePrivacy()">Rechtliches & Datenschutz anzeigen</a>
     
     <div id="privacy-text" style="display:none; margin-top: 20px; text-align: left; padding: 15px; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 10px;">
-        <strong>Datenschutzerklärung</strong><br><br>
+        <strong>CHECK24.net Partnerprogramm</strong><br>
+        Wir nehmen am CHECK24.net Partnerprogramm teil. Auf unseren Seiten werden iFrame-Buchungsmasken und andere Werbemittel eingebunden, an denen wir über Transaktionen, zum Beispiel durch Leads und Sales, eine Werbekostenerstattung erhalten können. Weitere Informationen zur Datennutzung durch CHECK24.net erhalten Sie in der Datenschutzerklärung von <a href="https://www.check24.net" target="_blank">CHECK24.net</a>.<br><br>
+
+        <strong>Datenschutzerklärung (Lokal)</strong><br>
         Diese Webseite dient reinen Informationszwecken. Wir erheben, speichern oder verarbeiten keine personenbezogenen Daten der Besucher. Die Berechnungen im Tool erfolgen lokal in Ihrem Browser.<br><br>
-        <strong>Cookies & Partner-Links:</strong><br>
-        Bei Klick auf den Vergleichs-Button werden Sie zu unserem Partner Check24 weitergeleitet. Dabei können Cookies gesetzt werden, um die Herkunft des Nutzers zu identifizieren (Affiliate-Tracking). Weitere Informationen finden Sie in der Datenschutzerklärung von Check24.<br><br>
+        
         <strong>Ihre Rechte:</strong><br>
         Da wir keine Daten speichern, haben wir keine Informationen über Sie. Bei Fragen wenden Sie sich an die oben genannte E-Mail-Adresse.
     </div>
@@ -264,7 +289,6 @@ function update() {
     const sP = parseFloat(document.getElementById('spritP').value) || 0;
     const eP = parseFloat(document.getElementById('stromP').value) || 0;
 
-    // Durchschnittswerte: 7.5L Benzin vs 19kWh Strom
     const costBurner = (km / 100) * 7.5 * sP;
     const costElectric = (km / 100) * 19 * eP;
     const savings = Math.max(0, costBurner - costElectric);
@@ -273,7 +297,6 @@ function update() {
     document.getElementById('costB').innerText = costBurner.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
     document.getElementById('costE').innerText = costElectric.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
 
-    // Bar Animation (100% bei 2000€ Ersparnis)
     const percent = Math.min((savings / 2000) * 100, 100);
     document.getElementById('savings-bar').style.width = percent + '%';
 }
@@ -284,7 +307,6 @@ function togglePrivacy() {
     if(p.style.display === 'block') p.scrollIntoView({behavior: 'smooth'});
 }
 
-// Initialer Aufruf
 update();
 </script>
 
